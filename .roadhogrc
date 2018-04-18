@@ -1,0 +1,27 @@
+{
+  "entry": "src/index.js",
+  "theme":{
+  "primary-color":"#FC982D"
+  },
+  "proxy": {
+    "/api": {
+      "target": "http://192.168.3.7:8001",
+      "changeOrigin": true
+    }
+  },
+  "env": {
+    "development": {
+      "extraBabelPlugins": [
+        "dva-hmr",
+        "transform-runtime",
+        ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }]
+      ]
+    },
+    "production": {
+      "extraBabelPlugins": [
+        "transform-runtime",
+        ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }]
+      ]
+    }
+  }
+}
